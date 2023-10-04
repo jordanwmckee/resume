@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
       - name: Build LaTeX
         run: docker-compose up -d latex-build
@@ -22,14 +25,15 @@ jobs:
             sleep 1
           done
 
-      - name: Check for Changes
+      - name: Commit Updated Resume
         run: |
-          if git diff --quiet; then
-            echo "No changes to commit."
-          else
-            git config user.name "Jordan"
-            git config user.email "jordanwmckee@outlook.com"
-            git add resume.pdf
-            git commit -m "Update PDF"
-            git push
-          fi
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add resume.pdf
+          git commit -m "Update resume.pdf"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
