@@ -1,0 +1,210 @@
+%-------------------------
+% Resume in Latex
+% Author : Jordan McKee
+% Based off of: https://github.com/sb2nov/resume
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% % sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% % serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\setlength{\footskip}{4.08003pt}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+	{#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+	  \textbf{#1} & #2 \\
+	  \textit{\small#3} & \textit{\small #4} \\
+	\end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeEducationSubheading}[8]{
+  \vspace{-2pt}
+  \item
+  \begin{tabular*}{0.97\textwidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+	\textbf{#1} & #2 \\
+	\textit{\small #3} & \textit{\small #4} \\
+	\textbf{\small #5} \\
+	\textbf{Awards:} \small #6 & \textit{\small #7} \\
+  \end{tabular*}
+  \vspace{-7pt}
+  \begin{tabular}{@{}p{0.97\linewidth}@{}}
+	\textbf{Relevant Coursework:} \small #8
+  \end{tabular}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+	\item
+	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+	  \textit{\small#1} & \textit{\small#2} \\
+	\end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+	\item
+	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+	  \small#1 & #2 \\
+	\end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+%----------HEADING----------
+\begin{center}
+	\textbf{\Huge \scshape Jordan McKeee} \\ \vspace{1pt}
+	\small 216-789-3647 $|$ \href{mailto:jordanwmckee@outlook.com}{\underline{jordanwmckee@outlook.com}} $|$ 
+	\href{https://linkedin.com/in/jordanwmckee}{\underline{linkedin.com/in/jordanwmckee}} $|$
+	\href{https://github.com/jordanwmckee}{\underline{github.com/jordanwmckee}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+	\resumeEducationSubheading
+	  {The University of Akron}{Akron, OH}
+	  {Bachelor of Science in Computer Science}{Expected December 2023}
+	  {Certificate in Artificial Intelligence and Machine Learning}
+	  {President's List, Dean's List}{GPA: 3.7 / 4.0}
+	  {Computer Science I, II \& III, Data Structures \& Algorithms, Human-Computer Interaction, Artificial Intelligence and Heuristic Programming, Internet Systems Programming, Software Engineering, Computer \& Operating Systems}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+	\resumeSubheading
+	  {Contract Web Developer}{May 2022 -- Present}
+	  {Giffin Equipment}{Goleta, CA}
+	  \resumeItemListStart
+		\resumeItem{Designed and implemented optimizations and stylistic changes to debug and improve the functionality of the company's website to keep visitors engaged longer and drive an \textbf{increase in sales}}
+		\resumeItem{Created an online job application form to improve the application process for visitors, resulting in more than \textbf{5 times more job applications received}}
+	  \resumeItemListEnd
+
+	\resumeSubheading
+	  {Software Engineer Intern}{May 2023 -- August 2023}
+	  {Keyfactor}{Independence, OH}
+	  \resumeItemListStart
+		\resumeItem{Enhanced the functionality and security of the ASP.NET REST APIs used in our software by problem-solving, bug fixing, and implementing robust PKI measures ensuring the integrity of digital signatures and data confidentiality}
+		\resumeItem{Constructed interactive technical documentation for an internal React component library of \textbf{over 50 complex components} using Storybook, improving product usability, user experience, and developer understanding}
+		\resumeItem{Verified and tested the quality of features and bug fixes through rigorous unit testing, quality assurance practices, and Python automation to meet high product standards by the end of the sprint}
+	  \resumeItemListEnd
+
+	\resumeSubheading
+	  {Software Developer Intern}{May 2022 -- April 2023}
+	  {Art Sentry}{Middleburg Heights, OH}
+	  \resumeItemListStart
+		\resumeItem{Converted server application into a Docker image to make deployments more versatile and platform independent, resulting in a reduced installation time of over \textbf{50\%}}
+		\resumeItem{Designed and implemented automated testing developer tools with Java and Docker for performance analysis, assessing the impact of software changes incrementally, and enhancing overall system stability}
+		\resumeItem{Automated the compilation, packaging, and code signing for software builds and releases with GitHub actions and Google Cloud, resulting in improved consistency and reliability of builds and reduced build time by \textbf{83\%}}
+	  \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+	{\textbf{Set Cycle} $|$ \emph{SwiftUI, Go, MySQL, Docker}}{September 2023 --- Present}
+	\resumeItemListStart
+		\resumeItem{Developed an iOS app with SwiftUI that communicates with a backend REST API written in Go and MySQL database hosted in Docker containers to hone my technical expertise of the iOS platform, system development, data storage, information retrieval, and to follow good style guidelines}
+		\resumeItem{Simplifies workout plans by allowing users registered with their Apple credentials to track their routines}
+		\resumeItem{Streamlines workout management by allowing users to cycle through each exercise in their workout plan}
+	\resumeItemListEnd
+\resumeProjectHeading
+	{\textbf{Spotify Wrapped Monthly} $|$ \emph{React, TypeScript, Spotify Web API}}{March 2023 -- May 2023 }
+	\resumeItemListStart
+		\resumeItem{Developed website hosted on GitHub Pages with React, TypeScript, the Spotify Web API and Playback SDKs}
+		\resumeItem{Required effective presentation skills as I had the opportunity to present it to the senior seminar audience to provide feedback, effectively communicating its innovative features and functionality}
+		\resumeItem{Provides authenticated Spotify users a comprehensive overview of their monthly listening analytics, including the ability to listen to their top tracks of the month, follow artists, and create playlists and add songs to them}
+	\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+	\small{
+	  \item{\textbf{Languages}: JavaScript, TypeScript, Python, Swift, Golang, HTML/CSS, C/C++, C\#, SQL, Java}
+	  \item{\textbf{Frameworks}: React.js, Next.js, Node.js, Express.js, jQuery, ASP.NET, NumPy}
+	  \item{\textbf{Tools}: Docker, Linux, Git, Github Actions, DevOps, Visual Studio/VS Code, XCode}
+	  }
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}

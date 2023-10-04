@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  latex-dev:
+    image: blang/latex:ctanfull
+    container_name: latex-dev
+    volumes:
+      - ./:/data
+    command: latexmk -pdf -pvc /data/resume.tex
+
+  latex-build:
+    image: blang/latex:ctanfull
+    container_name: latex-build
+    volumes:
+      - ./:/data
+    command: pdflatex /data/resume.tex

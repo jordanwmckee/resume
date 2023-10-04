@@ -1,0 +1,39 @@
+name: Build LaTeX and Update PDF
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Compose
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y docker-compose
+          sudo docker-compose up -d latex-build
+
+      # make this step wait for the latex build to finish
+      - name: Wait for LaTeX Build to Finish
+        run: |
+          while [ "$(sudo docker ps -q -f name=latex-build)" ]; do
+            sleep 1
+          done
+
+      - name: Copy resume.pdf
+        run: |
+          sudo docker cp $(sudo docker ps -q -f name=latex-build):/data/resume.pdf ./resume.pdf
+
+      - name: Commit and Push PDF
+        run: |
+          git config user.name "gh-actions-bot"
+          git config user.email "jordanwmckee@outlook.com"
+          git add resume.pdf
+          git commit -m "Update resume.pdf"
+          git push
