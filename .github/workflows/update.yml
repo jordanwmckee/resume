@@ -26,10 +26,6 @@ jobs:
             sleep 1
           done
 
-      - name: Copy resume.pdf
-        run: |
-          sudo docker cp $(sudo docker ps -q -f name=latex-build):/data/resume.pdf ./resume.pdf
-
       - name: Commit and Push PDF
         run: |
           git config user.name "gh-actions-bot"
