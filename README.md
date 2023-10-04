@@ -29,4 +29,4 @@ make clean # remove extra generated files
 
 ## Preview
 
-![Resume Screenshot](/resume_preview.png)
+![Resume Screenshot](/resume.pdf)
