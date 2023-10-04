@@ -13,11 +13,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Docker Compose
-        run: |
-          sudo apt-get update -q
-          sudo apt-get install -y docker-compose
-          sudo docker-compose up -d latex-build
+      - name: Build LaTeX
+        run: sudo docker-compose up -d latex-build
 
       # make this step wait for the latex build to finish
       - name: Wait for LaTeX Build to Finish
